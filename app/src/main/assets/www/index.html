@@ -2,11 +2,33 @@
 <html>
     <head>
         <title>Devoir PhoneGap</title>
+        <style type="text/css">
+            .page-liste-personnage {
+                height: 100%;
+                overflow: scroll;
+            }
+        </style>
     </head>
     <body>
         Il y a une erreur dans le programme
 
+        <script type="plain/text" id="page-liste-personnage">
+            <div class="page-liste-personnage">
+                <h1>Liste des personnages</h1>
+                <article id='main'>
+                    <section>
+                        <ul class="list" id="liste-personnage"></ul>
+                    </section>
+                </article>
+                <ul id="liste-personnage"></ul>
+            </div>
+        </script>
+
         <!-- <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script> -->
         <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
+        <script src="js/donnee/PersonnageDAO.js"></script>
+        <script src="js/modele/Personnage.js"></script>
+        <script src="js/vue/ListePersonnageVue.js"></script>
+        <script src="js/action/application.js"></script>
     </body>
 </html>
