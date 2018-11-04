@@ -6,7 +6,7 @@ var ListePersonnageVue = (function () {
             var listePersonnage = document.getElementById("liste-personnage");
             var li = "";
             for (var numeroPersonnage in listePersonnageDonnee) {
-                li += "<li>" + listePersonnageDonnee[numeroPersonnage].nom + "</li>";
+                li += "<li><a href='#personnage/" + numeroPersonnage + "'>" + listePersonnageDonnee[numeroPersonnage].nom + "</a></li>";
             }
             listePersonnage.innerHTML = li;
         }
