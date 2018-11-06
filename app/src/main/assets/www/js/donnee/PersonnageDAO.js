@@ -27,5 +27,14 @@ var PersonnageDAO = function () {
         }
         return listePersonnage;
     }
+    this.ajouter = function (personnage) {
+        if (listePersonnage.length > 0) {
+            personnage.id = listePersonnage[listePersonnage.length - 1].id + 1;
+        } else {
+            personnage.id = 0;
+        }
+        listePersonnage[personnage.id] = personnage;
+        localStorage['personnage'] = JSON.stringify(listePersonnage);
+    }
     initialiser();
 }
