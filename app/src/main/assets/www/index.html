@@ -60,6 +60,38 @@
             </article>
         </script>
 
+        <script type="plain/text" id="page-modifier-personnage">
+            <h1>Modifier un personnage</h1>
+            <article id='main' class="current">
+                <section>
+                    <form id="formulaire-modifier">
+                        <fieldset>
+                            <legend>Identification du personnage</legend>
+                            <div>
+                                <label for="nom">Nom</label>
+                                <textarea name="nom" id="nom"></textarea>
+                            </div>
+                            <div>
+                                <label for="classe">Classe</label>
+                                <textarea name="classe" id="classe"></textarea>
+                            </div>                            <div>
+                                <label for="race">Race</label>
+                                <textarea name="race" id="race"></textarea>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div>
+                                <label for="niveau">Niveau</label>
+                                <textarea name="niveau" id="niveau"></textarea>
+                            </div>
+                        </fieldset>
+                        <input type="submit" id="modifier" name="modifier" value="Modifier" />
+                    </form>
+                    <a href="#">Annuler et revenir à la liste</a>
+                </section>
+            </article>
+        </script>
+
         <!-- <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script> -->
         <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
         <script src="js/donnee/PersonnageDAO.js"></script>
