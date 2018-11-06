@@ -19,6 +19,18 @@
             var ajouterPersonnageVue = new AjouterPersonnageVue(actionEnregistrerPersonnage);
             ajouterPersonnageVue.afficher();
         }
+        else if (hash.match(/^#modifier-personnage\/([0-9]+)/)) {
+            var navigation = hash.match(/^#modifier-personnage\/([0-9]+)/);
+            var idPersonnage = navigation[1];
+            var modifierPersonnageVue = new ModifierPersonnageVue(actionModifierPersonnage, this.personnageDAO.chercherAvecId(idPersonnage));
+            modifierPersonnageVue.afficher();
+        } else {
+            naviguerAccueil();
+        }
+    }
+    var actionModifierPersonnage = function (personnage) {
+        this.personnageDAO.modifier(personnage);
+        naviguerAccueil();
     }
     var actionEnregistrerPersonnage = function (personnage) {
         this.personnageDAO.ajouter(personnage);
