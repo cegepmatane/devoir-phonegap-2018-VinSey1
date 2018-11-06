@@ -2,11 +2,7 @@ var PersonnageDAO = function () {
     var listePersonnage;
     var initialiser = function () {
         if (!listePersonnage) {
-            listePersonnage = [
-                new Personnage(0, "Eliott", "Quart d'elfe", "Archimage", 120),
-                new Personnage(1, "Vincent", "Humain", "Prêtre", 120),
-                new Personnage(2, "Youssef", "Humain", "Voleur", 1)
-            ]
+            listePersonnage = []
         }
     }
     this.chercherAvecId = function (idPersonnage) {
@@ -16,6 +12,19 @@ var PersonnageDAO = function () {
         return listePersonnage[0];
     }
     this.lister = function () {
+        if (localStorage['personnage']) {
+            listePersonnage = JSON.parse(localStorage['personnage']);
+        }
+        for (position in listePersonnage) {
+            var personnage = new Personnage(
+                listePersonnage[position].id,
+                listePersonnage[position].nom,
+                listePersonnage[position].race,
+                listePersonnage[position].classe,
+                listePersonnage[position].niveau
+            );
+            listePersonnage[position] = personnage;
+        }
         return listePersonnage;
     }
     initialiser();
