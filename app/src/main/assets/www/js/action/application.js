@@ -15,7 +15,17 @@
             var idPersonnage = navigation[1];
             var personnageVue = new PersonnageVue(this.personnageDAO.chercherAvecId(idPersonnage));
             personnageVue.afficher();
+        } else if (hash.match(/^#ajouter-personnage/)) {
+            var ajouterPersonnageVue = new AjouterPersonnageVue(actionEnregistrerPersonnage);
+            ajouterPersonnageVue.afficher();
         }
+    }
+    var actionEnregistrerPersonnage = function (personnage) {
+        this.personnageDAO.ajouter(personnage);
+        naviguerAccueil();
+    }
+    var naviguerAccueil = function () {
+        window.location.hash = "";
     }
     initialiser();
 })();
