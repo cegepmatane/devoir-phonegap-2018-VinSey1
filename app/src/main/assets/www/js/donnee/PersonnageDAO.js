@@ -36,5 +36,13 @@ var PersonnageDAO = function () {
         listePersonnage[personnage.id] = personnage;
         localStorage['personnage'] = JSON.stringify(listePersonnage);
     }
+    this.modifier = function (personnage) {
+        for (position in listePersonnage) {
+            if (listePersonnage[position].id == personnage.id) {
+                listePersonnage[position] = personnage;
+            }
+        }
+        localStorage['personnage'] = JSON.stringify(listePersonnage);
+    }
     initialiser();
 }
