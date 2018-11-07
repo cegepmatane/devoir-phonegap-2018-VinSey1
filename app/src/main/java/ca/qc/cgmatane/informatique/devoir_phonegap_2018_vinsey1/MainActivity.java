@@ -1,13 +1,17 @@
 package ca.qc.cgmatane.informatique.devoir_phonegap_2018_vinsey1;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import org.apache.cordova.*;
+import org.apache.cordova.DroidGap;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DroidGap {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.init();
+        super.loadUrl(Config.getStartUrl());
+        super.loadUrl("file:///android_asset/www/index.html");
+
     }
 }
