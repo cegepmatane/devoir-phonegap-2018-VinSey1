@@ -7,13 +7,13 @@ var ModifierPersonnageVue = (function () {
             var formulaireModifier = document.getElementById("formulaire-modifier");
             idPersonnage = personnage.id;
             personnageNom = document.getElementById("nom");
-            personnageNom.innerHTML = personnage.nom;
+            personnageNom.value = personnage.nom;
             personnageRace = document.getElementById("race");
-            personnageRace.innerHTML = personnage.race;
+            personnageRace.value = personnage.race;
             personnageClasse = document.getElementById("classe");
-            personnageClasse.innerHTML = personnage.classe;
+            personnageClasse.value = personnage.classe;
             personnageNiveau = document.getElementById("niveau");
-            personnageNiveau.innerHTML = personnage.niveau;
+            personnageNiveau.value = personnage.niveau;
             formulaireModifier.addEventListener("submit", modifierPersonnage);
         }
         var modifierPersonnage = function (evenement) {

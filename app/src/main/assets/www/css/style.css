@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+    color: #1a237e;
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: underline;
+    font-size: xx-large;
+}
+
+label {
+    font-size: 18px;
+    color: white;
+}
+
+input, select, textarea {
+    color: white;
+}
+
+.titre-application {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    margin: 0%;
+    padding: 2%;
+    font-size: 40px;
+    width: 100%;
+    background-color: #1a237e;
+    color: white;
+}
+
+.secondary-content {
+    color: #1a237e;
+}
+
+span {
+    font-size: 18px;
+}
+
+p {
+    font-size: 18px;
+    padding: 2%;
+}

@@ -1,105 +1,174 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Devoir PhoneGap</title>
-        <style type="text/css">
-            .page-liste-personnage {
-                height: 100%;
-                overflow: scroll;
-            }
-        </style>
-    </head>
-    <body>
-        Il y a une erreur dans le programme
+<head>
+    <title>Devoir PhoneGap</title>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <meta charset="UTF-8">
+</head>
+<body>
 
-        <script type="plain/text" id="page-liste-personnage">
+    Il y a une erreur dans le programme
+    <script type="plain/text" id="page-liste-personnage">
+        <div class="titre-application">
+            Donjon Et Dragon
+        </div>
+        <div class="container">
             <div class="page-liste-personnage">
                 <h1>Liste des personnages</h1>
-                <a href="#ajouter-personnage">Ajouter un personnage</a>
-                <ul id="liste-personnage"></ul>
+                <ul class="collection" id="liste-personnage"></ul>
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large red darken-4 pulse" href="#ajouter-personnage"><i class="material-icons">add</i></a>
+                </div>
             </div>
-        </script>
+        </div>
+    </script>
 
-        <script type="plain/text" id="page-personnage">
+    <script type="plain/text" id="page-personnage">
+        <div class="titre-application">
+            Donjon Et Dragon
+        </div>
+        <div class="container">
             <h1 id="personnage-nom"></h1>
-            <h2 id="personnage-race-classe"></h2>
-            <p id="personnage-niveau"></p>
-            <a href="#">Revenir à la liste de personnages</a>
-        </script>
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card indigo darken-4">
+                        <div class="card-content white-text">
+                            <div>
+                                <p id="personnage-race-classe"></p>
+                            </div>
+                            <div>
+                                <p id="personnage-niveau"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center">
+                    <a href="#" class="btn waves-effect waves-light red darken-4 col s12 z-depth-3">
+                        <i class="material-icons">arrow_back</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </script>
 
-        <script type="plain/text" id="page-ajouter-personnage">
+    <script type="plain/text" id="page-ajouter-personnage">
+        <div class="titre-application">
+            Donjon Et Dragon
+        </div>
+        <div class="container">
             <h1>Ajouter un personnage</h1>
             <article id='main' class="current">
                 <section>
                     <form id="formulaire-ajouter">
-                        <fieldset>
-                            <legend>Identification du personnage</legend>
-                            <div>
-                                <label for="nom">Nom</label>
-                                <input type="text" name="nom" id="nom" />
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <div class="card indigo darken-4">
+                                    <div class="card-content white-text">
+                                        <div>
+                                            <label for="nom">Nom</label>
+                                            <input type="text" name="nom" id="nom" />
+                                        </div>
+                                        <div>
+                                            <label for="race">Race</label>
+                                            <input type="text" name="race" id="race" />
+                                        </div>
+                                        <div>
+                                            <label for="classe">Classe</label>
+                                            <input type="text" name="classe" id="classe" />
+                                        </div>
+                                        <div>
+                                            <label for="niveau">Niveau</label>
+                                            <input type="text" name="niveau" id="niveau" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <label for="race">Race</label>
-                                <input type="text" name="race" id="race" />
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <a href="#" class="btn waves-effect waves-light red darken-4 col s12 z-depth-3">
+                                    <i class="material-icons">cancel</i>
+                                </a>
                             </div>
-                            <div>
-                                <label for="classe">Classe</label>
-                                <input type="text" name="classe" id="classe" />
+                            <div class="col s6">
+                                <button class="btn waves-effect waves-light indigo darken-4 col s12 z-depth-3" type="submit" id="enregistrer" name="enregistrer">
+                                    <i class="material-icons">done</i>
+                                </button>
                             </div>
-                        </fieldset>
-                        <fieldset>
-                            <div>
-                                <label for="niveau">Niveau</label>
-                                <textarea name="niveau" id="niveau"></textarea>
-                            </div>
-                        </fieldset>
-                        <input type="submit" id="enregistrer" name="enregistrer" value="Enregistrer" />
+                        </div>
                     </form>
-                    <a href="#">Annuler et revenir à la liste</a>
                 </section>
             </article>
-        </script>
+        </div>
+    </script>
 
-        <script type="plain/text" id="page-modifier-personnage">
+    <script type="plain/text" id="page-modifier-personnage">
+        <div class="titre-application">
+            Donjon Et Dragon
+        </div>
+        <div class="container">
             <h1>Modifier un personnage</h1>
             <article id='main' class="current">
                 <section>
                     <form id="formulaire-modifier">
-                        <fieldset>
-                            <legend>Identification du personnage</legend>
-                            <div>
-                                <label for="nom">Nom</label>
-                                <textarea name="nom" id="nom"></textarea>
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <div class="card indigo darken-4">
+                                    <div class="card-content white-text">
+                                        <div>
+                                            <label for="nom">Nom</label>
+                                            <input type="text" name="nom" id="nom" />
+                                        </div>
+                                        <div>
+                                            <label for="race">Race</label>
+                                            <input type="text" name="race" id="race" />
+                                        </div>
+                                        <div>
+                                            <label for="classe">Classe</label>
+                                            <input type="text" name="classe" id="classe" />
+                                        </div>
+                                        <div>
+                                            <label for="niveau">Niveau</label>
+                                            <input type="text" name="niveau" id="niveau" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <label for="classe">Classe</label>
-                                <textarea name="classe" id="classe"></textarea>
-                            </div>                            <div>
-                                <label for="race">Race</label>
-                                <textarea name="race" id="race"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <a href="#" class="btn waves-effect waves-light red darken-4 col s12 z-depth-3">
+                                    <i class="material-icons">cancel</i>
+                                </a>
                             </div>
-                        </fieldset>
-                        <fieldset>
-                            <div>
-                                <label for="niveau">Niveau</label>
-                                <textarea name="niveau" id="niveau"></textarea>
+                            <div class="col s6">
+                                <button class="btn waves-effect waves-light indigo darken-4 col s12 z-depth-3" type="submit" id="modifier" name="modifier">
+                                    <i class="material-icons">done</i>
+                                </button>
                             </div>
-                        </fieldset>
-                        <input type="submit" id="modifier" name="modifier" value="Modifier" />
+                        </div>
                     </form>
-                    <a href="#">Annuler et revenir à la liste</a>
                 </section>
             </article>
-        </script>
+        </div>
+    </script>
 
-        <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>
-        <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
-        <script src="js/donnee/PersonnageDAO.js"></script>
-        <script src="js/modele/Personnage.js"></script>
-        <script src="js/vue/ListePersonnageVue.js"></script>
-        <script src="js/vue/AjouterPersonnageVue.js"></script>
-        <script src="js/vue/ModifierPersonnageVue.js"></script>
-        <script src="js/vue/PersonnageVue.js"></script>
-        <script src="js/action/application.js"></script>
-    </body>
+    <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
+    <script src="js/donnee/PersonnageDAO.js"></script>
+    <script src="js/modele/Personnage.js"></script>
+    <script src="js/vue/ListePersonnageVue.js"></script>
+    <script src="js/vue/AjouterPersonnageVue.js"></script>
+    <script src="js/vue/ModifierPersonnageVue.js"></script>
+    <script src="js/vue/PersonnageVue.js"></script>
+    <script src="js/action/application.js"></script>
+</body>
 </html>
