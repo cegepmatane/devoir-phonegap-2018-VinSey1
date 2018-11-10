@@ -6,7 +6,7 @@ var ListePersonnageVue = (function () {
             var listePersonnage = document.getElementById("liste-personnage");
             var li = "";
             for (var numeroPersonnage in listePersonnageDonnee) {
-                li += "<li><a href='#personnage/" + numeroPersonnage + "'>" + listePersonnageDonnee[numeroPersonnage].nom + "</a> - <a href='#modifier-personnage/" + numeroPersonnage + "'>Modifier personnage </a></form></li>";
+                li += "<li class='collection-item'><a href='#personnage/" + numeroPersonnage + "'><span class='indigo-text darken-4'>" + listePersonnageDonnee[numeroPersonnage].nom + "</span></a><a class='secondary-content' href='#modifier-personnage/" + numeroPersonnage + "'><i class='material-icons'>edit</i></a></li>";
             }
             listePersonnage.innerHTML = li;
         }
